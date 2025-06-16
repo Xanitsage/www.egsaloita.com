@@ -1,4 +1,20 @@
 modules = ["web", "nodejs-20", "php-8.2"]
+run = "Run"
 
 [nix]
 channel = "stable-24_05"
+
+[workflows]
+runButton = "Run"
+
+[[workflows.workflow]]
+name = "Run"
+author = 43904265
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python3 -m http.server 5000"
+
+[deployment]
+run = ["sh", "-c", "Run"]
