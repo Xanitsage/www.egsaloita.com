@@ -18,3 +18,7 @@ args = "php -S 0.0.0.0:5000"
 
 [deployment]
 run = ["sh", "-c", "Run"]
+
+[[ports]]
+localPort = 5000
+externalPort = 80
