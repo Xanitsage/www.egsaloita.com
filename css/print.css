@@ -1,0 +1,201 @@
+/* Print styles for EGSA Loita Website */
+/* This file contains optimizations for printing */
+
+@media print {
+  /* General print styles */
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -ms-filter: none !important;
+  }
+  
+  /* Set page margins */
+  @page {
+    margin: 0.5cm;
+  }
+  
+  /* Hide unnecessary elements */
+  nav,
+  .masthead,
+  .mobile-header-bar,
+  .dt-mobile-header,
+  .dt-mobile-menu-icon,
+  .footer,
+  #footer,
+  .sidebar,
+  .widget-area,
+  .comments-area,
+  .navigation,
+  .pagination,
+  button,
+  .button,
+  .dt-btn,
+  input[type="button"],
+  input[type="reset"],
+  input[type="submit"],
+  #load,
+  iframe,
+  .social-icons,
+  .share-buttons,
+  .back-to-top,
+  .fixed-header-bar,
+  .phantom-sticky,
+  .sticky-on,
+  .mobile-sticky-header-overlay {
+    display: none !important;
+  }
+  
+  /* Show important content */
+  body,
+  .content,
+  .page-content,
+  .entry-content,
+  .entry-summary {
+    display: block !important;
+    width: 100% !important;
+    float: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  /* Ensure content is visible */
+  .content {
+    margin-top: 0 !important;
+  }
+  
+  /* Improve typography for print */
+  body {
+    font: 12pt Georgia, "Times New Roman", Times, serif !important;
+    line-height: 1.3 !important;
+  }
+  
+  h1 {
+    font-size: 24pt !important;
+    page-break-after: avoid;
+  }
+  
+  h2 {
+    font-size: 18pt !important;
+    page-break-after: avoid;
+  }
+  
+  h3 {
+    font-size: 14pt !important;
+    page-break-after: avoid;
+  }
+  
+  h4, h5, h6 {
+    font-size: 12pt !important;
+    page-break-after: avoid;
+  }
+  
+  /* Handle links */
+  a, a:visited {
+    text-decoration: underline;
+  }
+  
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 90%;
+  }
+  
+  /* Don't show link text for internal or javascript links */
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+  
+  /* Handle images */
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+  
+  /* Handle tables */
+  table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+  }
+  
+  table, th, td {
+    border: 1px solid #000 !important;
+  }
+  
+  th, td {
+    padding: 5px !important;
+  }
+  
+  /* Handle page breaks */
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  
+  /* Ensure background images print */
+  .print-background {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+  
+  /* Fix for columns */
+  .wpb_column,
+  .vc_column_container {
+    width: 100% !important;
+    float: none !important;
+    display: block !important;
+  }
+  
+  /* Fix for rows */
+  .vc_row {
+    display: block !important;
+    width: 100% !important;
+  }
+  
+  /* Show URL for images */
+  img:after {
+    content: " (" attr(src) ")";
+    font-size: 80%;
+    word-wrap: break-word;
+    display: block;
+  }
+  
+  /* Add visible URL for abbreviations */
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  
+  /* Ensure logo is visible */
+  .branding img,
+  .logo img {
+    display: block !important;
+    max-width: 200px !important;
+    margin: 0 auto 20px !important;
+  }
+  
+  /* Add page numbers */
+  body:after {
+    content: "Page " counter(page);
+    counter-increment: page;
+    position: fixed;
+    bottom: 0.5cm;
+    right: 0.5cm;
+    font-size: 10pt;
+  }
+  
+  /* Fix for flexbox in print */
+  .is-layout-flex,
+  .flex-container,
+  .vc_row,
+  .wpb_row {
+    display: block !important;
+  }
+  
+  /* Fix for grid in print */
+  .is-layout-grid,
+  .grid-container {
+    display: block !important;
+  }
+}

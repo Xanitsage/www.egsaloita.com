@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="vec_l" data-name="vec l" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4.81 5.31">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #e6e6e5;
+      }
+
+      .cls-2 {
+        fill: #192a54;
+      }
+    </style>
+  </defs>
+  <polygon class="cls-2" points="3.5 4.13 3.5 5.31 0 5.31 0 1.23 1.18 1.23 1.18 4.13 3.5 4.13"/>
+  <polygon class="cls-1" points="4.81 0 4.81 5.31 4.09 5.31 4.09 .96 0 .96 0 0 4.81 0"/>
+</svg>
